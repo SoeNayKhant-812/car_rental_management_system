@@ -1,23 +1,14 @@
-package com.crs.main.model;
+package com.crs.main.dto;
 
 import com.crs.main.util.enums.CarUtils;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
-import java.time.Instant;
 
-@Setter
 @Getter
-@Entity
-public class Car {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Setter
+public class CarDTO {
     private long id;
 
     private String vin;
@@ -35,7 +26,4 @@ public class Car {
     private CarUtils.CarStatus status; // enum used
     private String features;
     private String image_url;
-
-    private Instant created_at;
-    private Instant updated_at;
 }

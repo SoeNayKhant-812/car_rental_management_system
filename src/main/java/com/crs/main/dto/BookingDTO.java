@@ -1,26 +1,17 @@
-package com.crs.main.model;
+package com.crs.main.dto;
 
 import com.crs.main.util.enums.BookingUtils;
 import com.crs.main.util.enums.PaymentUtils;
 import com.crs.main.util.enums.RentUtils;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
-import java.time.Instant;
 import java.time.LocalDateTime;
 
-@Setter
 @Getter
-@Entity
-public class Booking {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Setter
+public class BookingDTO {
     private long id;
 
     private long user_id;
@@ -37,6 +28,4 @@ public class Booking {
     private PaymentUtils.PaymentPlan payment_plan; // enum used
     private RentUtils.PaymentStatus payment_status;  // enum used
     private String notes;
-    private Instant created_at;
-    private Instant updated_at;
 }
