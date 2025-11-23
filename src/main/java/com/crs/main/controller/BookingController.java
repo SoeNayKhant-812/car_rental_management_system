@@ -20,31 +20,31 @@ public class BookingController {
     }
 
     @GetMapping
-    public ResponseEntity<List<BookingDTO>> getAllCars() {
+    public ResponseEntity<List<BookingDTO>> getAllBookings() {
         List<BookingDTO> cars = bookingService.findAll();
         return ResponseEntity.ok(cars);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<BookingDTO> getCarById(@PathVariable Long id) {
+    public ResponseEntity<BookingDTO> getBookingById(@PathVariable Long id) {
         BookingDTO car = bookingService.findById(id);
         return ResponseEntity.ok(car);
     }
 
     @PostMapping("/create")
-    public ResponseEntity<BookingDTO> createCar(@RequestBody BookingDTO carDTO) {
+    public ResponseEntity<BookingDTO> createBooking(@RequestBody BookingDTO carDTO) {
         BookingDTO createdCar = bookingService.save(carDTO);
         return ResponseEntity.ok(createdCar);
     }
 
     @PutMapping("/{id}/update")
-    public ResponseEntity<BookingDTO> updateCar(@PathVariable Long id,@RequestBody BookingDTO carDTO) {
+    public ResponseEntity<BookingDTO> updateBooking(@PathVariable Long id, @RequestBody BookingDTO carDTO) {
         BookingDTO updatedCar = bookingService.update(id, carDTO);
         return ResponseEntity.ok(updatedCar);
     }
 
     @DeleteMapping("/{id}/delete")
-    public ResponseEntity<Void> deleteCar(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteBooking(@PathVariable Long id) {
         bookingService.deleteById(id);
         return ResponseEntity.noContent().build();
     }

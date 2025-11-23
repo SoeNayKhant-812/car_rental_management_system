@@ -20,12 +20,9 @@ public class BookingDTO {
     private LocalDateTime dropOff_datetime;
     private long pickup_location_id;
     private long dropOff_location_id;
-    private BigDecimal estimated_total_price;
-    private BigDecimal actual_total_price;
-    private BookingUtils.BookingStatus booking_status;  // enum used
-    private BookingUtils.BookingType booking_type; // enum used
-    private RentUtils.RentType rent_type; // enum used
-    private PaymentUtils.PaymentPlan payment_plan; // enum used
-    private RentUtils.PaymentStatus payment_status;  // enum used
+    private double estimated_total_price;
+    private double actual_total_price;
+    private BookingUtils.BookingStatus booking_status;
+    private BookingUtils.BookingType booking_type;
     private String notes;
 }

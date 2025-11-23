@@ -20,31 +20,31 @@ public class MaintenanceController {
     }
 
     @GetMapping
-    public ResponseEntity<List<MaintenanceDTO>> getAllCars() {
+    public ResponseEntity<List<MaintenanceDTO>> getAllMaintenances() {
         List<MaintenanceDTO> cars = maintenanceService.getAllMaintenances();
         return ResponseEntity.ok(cars);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<MaintenanceDTO> getCarById(@PathVariable Long id) {
+    public ResponseEntity<MaintenanceDTO> getMaintenanceById(@PathVariable Long id) {
         MaintenanceDTO car = maintenanceService.getMaintenanceById(id);
         return ResponseEntity.ok(car);
     }
 
     @PostMapping("/create")
-    public ResponseEntity<MaintenanceDTO> createCar(@RequestBody MaintenanceDTO carDTO) {
+    public ResponseEntity<MaintenanceDTO> createMaintenance(@RequestBody MaintenanceDTO carDTO) {
         MaintenanceDTO createdCar = maintenanceService.saveMaintenance(carDTO);
         return ResponseEntity.ok(createdCar);
     }
 
     @PutMapping("/{id}/update")
-    public ResponseEntity<MaintenanceDTO> updateCar(@PathVariable Long id,@RequestBody MaintenanceDTO carDTO) {
+    public ResponseEntity<MaintenanceDTO> updateMaintenance(@PathVariable Long id, @RequestBody MaintenanceDTO carDTO) {
         MaintenanceDTO updatedCar = maintenanceService.update(id, carDTO);
         return ResponseEntity.ok(updatedCar);
     }
 
     @DeleteMapping("/{id}/delete")
-    public ResponseEntity<Void> deleteCar(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteMaintenance(@PathVariable Long id) {
         maintenanceService.deleteMaintenanceById(id);
         return ResponseEntity.noContent().build();
     }

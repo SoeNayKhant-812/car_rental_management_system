@@ -1,6 +1,5 @@
 package com.crs.main.model;
 
-import com.crs.main.util.enums.BookingUtils;
 import com.crs.main.util.enums.PaymentUtils;
 import com.crs.main.util.enums.RentUtils;
 import jakarta.persistence.*;
@@ -27,13 +26,16 @@ public class Rent {
     private LocalDateTime dropOff_datetime;
     private long pickup_location_id;
     private long dropOff_location_id;
-    private BigDecimal estimated_total_price;
-    private BigDecimal actual_total_price;
-    private RentUtils.RentType rent_type; // enum used
-    private PaymentUtils.PaymentPlan payment_plan; // enum used
-    private RentUtils.PaymentStatus payment_status;  // enum used
-    private RentUtils.RentalStatus rental_status; // enum used
+    private double estimated_total_price;
+    private double actual_total_price;
+
+    private RentUtils.RentType rent_type;
+    private PaymentUtils.PaymentPlan payment_plan;
+    private RentUtils.PaymentStatus payment_status;
+    private RentUtils.RentalStatus rental_status;
+
     private ArrayList<Payment> payments;
+
     private String notes;
     private Instant created_at;
     private Instant updated_at;

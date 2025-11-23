@@ -22,9 +22,6 @@ public class BookingMapper {
         bookingDTO.setActual_total_price(booking.getActual_total_price());
         bookingDTO.setBooking_status(booking.getBooking_status());
         bookingDTO.setBooking_type(booking.getBooking_type());
-        bookingDTO.setRent_type(booking.getRent_type());
-        bookingDTO.setPayment_status(booking.getPayment_status());
-        bookingDTO.setPayment_plan(booking.getPayment_plan());
         bookingDTO.setNotes(booking.getNotes());
         return bookingDTO;
     }
@@ -45,9 +42,6 @@ public class BookingMapper {
         booking.setActual_total_price(dto.getActual_total_price());
         booking.setBooking_status(dto.getBooking_status());
         booking.setBooking_type(dto.getBooking_type());
-        booking.setRent_type(dto.getRent_type());
-        booking.setPayment_status(dto.getPayment_status());
-        booking.setPayment_plan(dto.getPayment_plan());
         booking.setNotes(dto.getNotes());
         booking.setCreated_at(Instant.now());
         booking.setUpdated_at(Instant.now());

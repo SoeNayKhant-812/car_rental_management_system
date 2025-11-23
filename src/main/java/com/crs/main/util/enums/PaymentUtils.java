@@ -10,24 +10,30 @@ public class PaymentUtils {
         VALUABLE_ASSET,
         CASH
     }
+
     public enum PaymentStatus {
-        PENDING,
-        COMPLETED,
-        FAILED,
-        REFUNDED
+        PENDING,// payment initiated but not completed
+        PROCESSING,// payment is being processed
+        COMPLETED,// payment successful
+        PARTIALLY_COMPLETED,// partial payment made
+        FAILED,// payment failed
+        CANCELLED,// payment cancelled by user
+        REFUNDED// full refund issued
     }
+
     public enum PaymentPlan {
-        FULL_PAYMENT,
-        DEPOSIT_PLUS_FULL_BALANCE,
-        DEPOSIT_PLUS_YEARLY_INSTALLMENTS,
-        DEPOSIT_PLUS_QUARTERLY_INSTALLMENTS,
-        DEPOSIT_PLUS_MONTHLY_INSTALLMENTS,
-        DEPOSIT_PLUS_WEEKLY_INSTALLMENTS,
-        DEPOSIT_PLUS_DAILY_INSTALLMENTS,
-        PREPAID_YEARLY_INSTALLMENT,
-        PREPAID_QUARTERLY_INSTALLMENT,
-        PREPAID_MONTHLY_INSTALLMENT,
-        PREPAID_WEEKLY_INSTALLMENT,
-        PREPAID_DAILY_INSTALLMENT
+        FULL_PAYMENT,// single payment
+        DEPOSIT_PLUS_FULL_BALANCE,// full balance after deposit
+        DEPOSIT_PLUS_YEARLY_INSTALLMENTS,// above 12 months
+        DEPOSIT_PLUS_QUARTERLY_INSTALLMENTS,// 3 to 6 months
+        DEPOSIT_PLUS_MONTHLY_INSTALLMENTS,// 1 to 12 months
+        DEPOSIT_PLUS_WEEKLY_INSTALLMENTS,// 1 week to 3 months
+        DEPOSIT_PLUS_DAILY_INSTALLMENTS,// up to 7 days
+        PREPAID_YEARLY_INSTALLMENT,// above 12 months
+        PREPAID_QUARTERLY_INSTALLMENT,// 3 to 6 months
+        PREPAID_MONTHLY_INSTALLMENT,// 1 to 12 months
+        PREPAID_WEEKLY_INSTALLMENT,// 1 week to 3 months
+        PREPAID_DAILY_INSTALLMENT,// up to 7 days
+        OTHER
     }
 }

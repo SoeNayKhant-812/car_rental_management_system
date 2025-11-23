@@ -20,31 +20,31 @@ public class PaymentController {
     }
 
     @GetMapping
-    public ResponseEntity<List<PaymentDTO>> getAllCars() {
+    public ResponseEntity<List<PaymentDTO>> getAllPayments() {
         List<PaymentDTO> cars = paymentService.getAllPayments();
         return ResponseEntity.ok(cars);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<PaymentDTO> getCarById(@PathVariable Long id) {
+    public ResponseEntity<PaymentDTO> getPaymentById(@PathVariable Long id) {
         PaymentDTO car = paymentService.getPaymentById(id);
         return ResponseEntity.ok(car);
     }
 
     @PostMapping("/create")
-    public ResponseEntity<PaymentDTO> createCar(@RequestBody PaymentDTO carDTO) {
+    public ResponseEntity<PaymentDTO> createPayment(@RequestBody PaymentDTO carDTO) {
         PaymentDTO createdCar = paymentService.savePayment(carDTO);
         return ResponseEntity.ok(createdCar);
     }
 
     @PutMapping("/{id}/update")
-    public ResponseEntity<PaymentDTO> updateCar(@PathVariable Long id,@RequestBody PaymentDTO carDTO) {
+    public ResponseEntity<PaymentDTO> updatePayment(@PathVariable Long id, @RequestBody PaymentDTO carDTO) {
         PaymentDTO updatedCar = paymentService.update(id, carDTO);
         return ResponseEntity.ok(updatedCar);
     }
 
     @DeleteMapping("/{id}/delete")
-    public ResponseEntity<Void> deleteCar(@PathVariable Long id) {
+    public ResponseEntity<Void> deletePayment(@PathVariable Long id) {
         paymentService.deletePaymentById(id);
         return ResponseEntity.noContent().build();
     }

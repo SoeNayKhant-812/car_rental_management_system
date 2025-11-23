@@ -20,33 +20,32 @@ public class UserController {
     }
 
     @GetMapping
-    public ResponseEntity<List<UserDTO>> getAllCars() {
+    public ResponseEntity<List<UserDTO>> getAllUsers() {
         List<UserDTO> cars = userService.findAll();
         return ResponseEntity.ok(cars);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UserDTO> getCarById(@PathVariable Long id) {
+    public ResponseEntity<UserDTO> getUserById(@PathVariable Long id) {
         UserDTO car = userService.findById(id);
         return ResponseEntity.ok(car);
     }
 
     @PostMapping("/create")
-    public ResponseEntity<UserDTO> createCar(@RequestBody UserDTO carDTO) {
+    public ResponseEntity<UserDTO> createUser(@RequestBody UserDTO carDTO) {
         UserDTO createdCar = userService.save(carDTO);
         return ResponseEntity.ok(createdCar);
     }
 
     @PutMapping("/{id}/update")
-    public ResponseEntity<UserDTO> updateCar(@PathVariable Long id,@RequestBody UserDTO carDTO) {
+    public ResponseEntity<UserDTO> updateUser(@PathVariable Long id, @RequestBody UserDTO carDTO) {
         UserDTO updatedCar = userService.update(id, carDTO);
         return ResponseEntity.ok(updatedCar);
     }
 
     @DeleteMapping("/{id}/delete")
-    public ResponseEntity<Void> deleteCar(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
         userService.deleteById(id);
         return ResponseEntity.noContent().build();
     }
-
 }

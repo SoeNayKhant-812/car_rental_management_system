@@ -24,12 +24,12 @@ public class Car {
     private String license_plate;
     private String make;
     private String model;
-    private BigDecimal price;
+    private double price;
     private CarUtils.CarType type; // enum used
     private int year;
     private String color;
     private int mileage;
-    private BigDecimal daily_rental_rate;
+    private double daily_rental_rate;
     private long vehicle_type_id;
     private long current_location_id;
     private CarUtils.CarStatus status; // enum used

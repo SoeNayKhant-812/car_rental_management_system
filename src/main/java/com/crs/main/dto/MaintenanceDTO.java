@@ -14,7 +14,7 @@ public class MaintenanceDTO {
     private long vehicleId;
     private String service_type;
     private LocalDate service_date;
-    private BigDecimal price;
+    private double price;
     private String service_center;
     private String description;
     private LocalDate next_service_due_date;

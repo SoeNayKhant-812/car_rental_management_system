@@ -20,11 +20,11 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private long bookingId;
+    private long rent_id;
     private PaymentUtils.PaymentMethod paymentMethod;  // enum used
     private PaymentUtils.PaymentStatus paymentStatus;  // enum used
     private PaymentUtils.PaymentPlan paymentPlan; // enum used
     private String transactionId;
-    private BigDecimal amount;
+    private double amount;
     private Instant paymentDate;
 }

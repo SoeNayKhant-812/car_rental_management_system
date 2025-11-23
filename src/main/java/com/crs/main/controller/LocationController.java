@@ -20,31 +20,31 @@ public class LocationController {
     }
 
     @GetMapping
-    public ResponseEntity<List<LocationDTO>> getAllCars() {
+    public ResponseEntity<List<LocationDTO>> getAllLocations() {
         List<LocationDTO> cars = locationService.getLocations();
         return ResponseEntity.ok(cars);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<LocationDTO> getCarById(@PathVariable Long id) {
+    public ResponseEntity<LocationDTO> getLocationById(@PathVariable Long id) {
         LocationDTO car = locationService.getLocationById(id);
         return ResponseEntity.ok(car);
     }
 
     @PostMapping("/create")
-    public ResponseEntity<LocationDTO> createCar(@RequestBody LocationDTO carDTO) {
+    public ResponseEntity<LocationDTO> createLocation(@RequestBody LocationDTO carDTO) {
         LocationDTO createdCar = locationService.saveLocation(carDTO);
         return ResponseEntity.ok(createdCar);
     }
 
     @PutMapping("/{id}/update")
-    public ResponseEntity<LocationDTO> updateCar(@PathVariable Long id,@RequestBody LocationDTO carDTO) {
+    public ResponseEntity<LocationDTO> updateLocation(@PathVariable Long id, @RequestBody LocationDTO carDTO) {
         LocationDTO updatedCar = locationService.update(id, carDTO);
         return ResponseEntity.ok(updatedCar);
     }
 
     @DeleteMapping("/{id}/delete")
-    public ResponseEntity<Void> deleteCar(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteLocation(@PathVariable Long id) {
         locationService.deleteLocationById(id);
         return ResponseEntity.noContent().build();
     }
