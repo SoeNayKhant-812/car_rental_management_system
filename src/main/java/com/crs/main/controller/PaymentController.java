@@ -11,6 +11,7 @@ import com.crs.main.util.enums.PaymentUtils;
 import com.crs.main.util.enums.RentUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -29,36 +30,42 @@ public class PaymentController {
         this.paymentService = paymentService;
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN','STAFF')")
     @GetMapping
     public ResponseEntity<List<PaymentDTO>> getAllPayments() {
         List<PaymentDTO> cars = paymentService.getAllPayments();
         return ResponseEntity.ok(cars);
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN','STAFF','USER')")
     @GetMapping("/{id}")
     public ResponseEntity<PaymentDTO> getPaymentById(@PathVariable Long id) {
         PaymentDTO car = paymentService.getPaymentById(id);
         return ResponseEntity.ok(car);
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN','STAFF','USER')")
     @GetMapping("/rent/{rentId}")
     public ResponseEntity<List<PaymentDTO>> getPaymentByRentId(@PathVariable Long rentId) {
         List<PaymentDTO> payments = paymentService.getPaymentByRentId(rentId);
         return ResponseEntity.ok(payments);
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN','STAFF','USER')")
     @PostMapping("/create")
     public ResponseEntity<PaymentDTO> createPayment(@RequestBody PaymentDTO carDTO) {
         PaymentDTO createdCar = paymentService.savePayment(carDTO);
         return ResponseEntity.ok(createdCar);
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN','STAFF','USER')")
     @PutMapping("/{id}/update")
     public ResponseEntity<PaymentDTO> updatePayment(@PathVariable Long id, @RequestBody PaymentDTO carDTO) {
         PaymentDTO updatedCar = paymentService.update(id, carDTO);
         return ResponseEntity.ok(updatedCar);
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN','STAFF')")
     @DeleteMapping("/{id}/delete")
     public ResponseEntity<Void> deletePayment(@PathVariable Long id) {
         paymentService.deletePaymentById(id);
