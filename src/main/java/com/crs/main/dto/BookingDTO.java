@@ -20,8 +20,8 @@ public class BookingDTO {
     private LocalDateTime dropOff_datetime;
     private long pickup_location_id;
     private long dropOff_location_id;
-    private double estimated_total_price;
-    private double actual_total_price;
+    private BigDecimal estimated_total_price;
+    private BigDecimal actual_total_price;
     private BookingUtils.BookingStatus booking_status;
     private BookingUtils.BookingType booking_type;
     private String notes;

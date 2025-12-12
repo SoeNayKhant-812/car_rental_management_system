@@ -10,7 +10,7 @@ public class PaymentMapper {
         }
         PaymentDTO dto = new PaymentDTO();
         dto.setId(payment.getId());
-        dto.setRent_id(payment.getRent_id());
+        dto.setRentId(payment.getRentId());
         dto.setPaymentMethod(payment.getPaymentMethod());
         dto.setPaymentStatus(payment.getPaymentStatus());
         dto.setPaymentPlan(payment.getPaymentPlan());
@@ -26,7 +26,7 @@ public class PaymentMapper {
         }
         Payment payment = new Payment();
         payment.setId(dto.getId());
-        payment.setRent_id(dto.getRent_id());
+        payment.setRentId(dto.getRentId());
         payment.setPaymentMethod(dto.getPaymentMethod());
         payment.setPaymentStatus(dto.getPaymentStatus());
         payment.setPaymentPlan(dto.getPaymentPlan());

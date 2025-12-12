@@ -22,8 +22,8 @@ public class RentDTO {
     private LocalDateTime dropOff_datetime;
     private long pickup_location_id;
     private long dropOff_location_id;
-    private double estimated_total_price;
-    private double actual_total_price;
+    private BigDecimal estimated_total_price;
+    private BigDecimal actual_total_price;
     private RentUtils.RentType rent_type; // enum used
     private PaymentUtils.PaymentPlan payment_plan; // enum used
     private RentUtils.PaymentStatus payment_status;  // enum used
